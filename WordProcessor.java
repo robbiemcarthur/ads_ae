@@ -1,13 +1,8 @@
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Set;
-//import implementing set (eg. TreeSet)
 import java.util.TreeSet;
-
-
 
 
 public class WordProcessor {
@@ -78,39 +73,6 @@ public class WordProcessor {
 				element.compareTo(element);
 			}
 		}
-
-		//create a set of type String called wordSet
-		//create a set of type CountedElement<String> called countedWordSet 
-
-		//for each input file (assume 3 arguments, each the name of a file)
-		//  for each word w
-		//     if wordset doesnt contain w:
-		//        add w to wordset
-		//        add new element to countedWordSet
-		//     else
-
-		//        increment numeric part of element in countedWordSet containing w
-		
-		// TESTING STRING OUTPUT
-//		int c = 0;
-//		for(CountedElement<String> wrd:countedWordSet)
-//		{
-//			if(c!=5)
-//			{
-//			System.out.print("("+wrd.getElement() + "," + wrd.getCount()+"), ");
-//			c++;
-//			}
-//			else
-//			{
-//				System.out.print("\n");
-//				c=0;
-//			}
-//		}
-		
-//		for(CountedElement<String>wrd:countedWordSet)
-//		{
-//			System.out.println(wrd.toString());
-//		}
 		System.out.println(displaySet(countedWordSet));
 	}
 }
