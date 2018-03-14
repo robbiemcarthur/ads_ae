@@ -2,10 +2,10 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 //import implementing set (eg. TreeSet)
+import java.util.TreeSet;
 
 
 
@@ -23,12 +23,12 @@ public class WordProcessor {
 		for(E element:inputSet) {
 			if(n==5)
 			{
-				word+="\n\n";
 				n=0;
+				word+="\n";
 			}
-			word+=element.toString()+", \n";
+			word+=element.toString();
+			n++;
 		}
-		word+="\n";
 		return word;
 	}
 
@@ -37,8 +37,8 @@ public class WordProcessor {
 	 */
 	public static void main(String[] args) {
 		String [] files = new String[] {"file0.txt", "file1.txt", "file2.txt"};
-		Set<String> wordSet = new HashSet<String>();
-		Set <CountedElement<String>> countedWordSet = new HashSet<CountedElement<String>>();
+		Set<String> wordSet = new TreeSet<String>();
+		Set <CountedElement<String>> countedWordSet = new TreeSet<CountedElement<String>>();
 		int instance = 1;
 		for(String fin:files)
 		{
@@ -72,6 +72,10 @@ public class WordProcessor {
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+			for(CountedElement<String> element: countedWordSet)
+			{
+				element.compareTo(element);
 			}
 		}
 

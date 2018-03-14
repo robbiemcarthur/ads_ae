@@ -38,19 +38,12 @@ public class CountedElement<E extends Comparable<E>> implements Comparable<Count
 	
 	//add toString() method
 	public String toString() {
-		String output = ("("+getElement()+","+getCount()+") ");
+		String output = ("("+getElement()+","+getCount()+"), ");
 		return output;
 	}
 	
 	public int compareTo(CountedElement<E> sC1) {
-	    if(sC1==this)
-	    {
-	    	return 1;
-	    }
-	    else
-	    {
-	    	return 0;
-	    }
+	    return this.element.compareTo(sC1.element);
 	}
 
 }
