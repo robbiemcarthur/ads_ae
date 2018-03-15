@@ -2,16 +2,16 @@
 
 import java.util.Iterator;
 
-public class BSTBag<E> implements Bag {
+public class BSTBag<E extends Comparable<E>> implements Bag {
 	private static class Node <E extends Comparable<E>>
 	{
 		protected E element;
-		protected Node<E> left, right;
+		protected Node<E> leftst, rightst;
 		
-		protected Node(E elem) 
+		protected Node(E _element) 
 		{
-			element = elem;
-			left = null; right = null;
+			element = _element;
+			leftst = null; rightst = null;
 		}
 	}
 	
@@ -25,7 +25,7 @@ public class BSTBag<E> implements Bag {
 
 	@Override
 	public boolean isEmpty() {
-		if(this.isEmpty())
+		if(root==null)
 		{
 			return true;
 		}
@@ -37,7 +37,12 @@ public class BSTBag<E> implements Bag {
 
 	@Override
 	public int size() {
-		return this.size();
+		int size = 0;
+		if(root!=null)
+		{
+//			size = 1 + root.leftst+root.rightst;
+		}
+		return size;
 	}
 
 	@Override
