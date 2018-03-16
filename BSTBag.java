@@ -1,27 +1,29 @@
-
-
 import java.util.Iterator;
 
 public class BSTBag<E extends Comparable<E>> implements Bag {
+
+	/**
+	 * Inner class
+	 */
 	private static class Node <E extends Comparable<E>>
 	{
-		protected E element;
-		protected Node<E> leftst, rightst;
-		
-		protected Node(E _element) 
+		protected CountedElement<E> element;
+		protected Node<CountedElement<E>> left, right;
+
+		protected Node(CountedElement<E> elem) 
 		{
-			element = _element;
-			leftst = null; rightst = null;
+			element = elem;
+			left = null; right = null;
 		}
 	}
-	
 	private Node<CountedElement<E>> root;
-	
+	private int size;
+
 	public BSTBag() 
 	{
 		root = null;
+		size = 0;
 	}
-	
 
 	@Override
 	public boolean isEmpty() {
@@ -31,17 +33,12 @@ public class BSTBag<E extends Comparable<E>> implements Bag {
 		}
 		else
 		{
-		return false;
+			return false;
 		}
 	}
 
 	@Override
 	public int size() {
-		int size = 0;
-		if(root!=null)
-		{
-//			size = 1 + root.leftst+root.rightst;
-		}
 		return size;
 	}
 
@@ -53,7 +50,7 @@ public class BSTBag<E extends Comparable<E>> implements Bag {
 		}
 		else
 		{
-		return false;
+			return false;
 		}
 	}
 
@@ -65,28 +62,27 @@ public class BSTBag<E extends Comparable<E>> implements Bag {
 		}
 		else
 		{
-		return false;
+			return false;
 		}
 	}
 
 	@Override
 	public void clear() {
-//		for(E element: Bag that)
 		{
-			
+
 		}
 	}
 
 	@Override
 	public void add(Object element) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void remove(Object element) {
-		// TODO Auto-generated method stub
-		
+		int direction = 0;
+		Node<CountedElement<E>> parent = null, curr = root;
+
 	}
 
 	@Override
@@ -94,5 +90,5 @@ public class BSTBag<E extends Comparable<E>> implements Bag {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
+

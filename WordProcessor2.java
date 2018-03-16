@@ -4,32 +4,10 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
+public class WordProcessor2 {
 
-public class WordProcessor {
-	private static <E> String displaySet(Set<E> inputSet){
-		//implement this static method to create a
-		// String representation of set - 5 comma separated elements per line
-		// assume that type E has a toString method
-
-		String word = "";
-		int n = 0;
-
-		for(E element:inputSet) {
-			if(n==5)
-			{
-				n=0;
-				word+="\n";
-			}
-			word+=element.toString();
-			n++;
-		}
-		return word;
-	}
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		String [] files = new String[] {"file0.txt", "file1.txt", "file2.txt"};
 		Set<String> wordSet = new TreeSet<String>();
 		Set <CountedElement<String>> countedWordSet = new TreeSet<CountedElement<String>>();
@@ -46,7 +24,7 @@ public class WordProcessor {
 					{
 						if(!wordSet.contains(w)||wordSet.isEmpty())
 						{
-//							System.out.println("No instance of " + w + "!");        // TESTING
+							//							System.out.println("No instance of " + w + "!");        // TESTING
 							wordSet.add(w);
 							countedWordSet.add(new CountedElement<String>(w, instance));
 						}
@@ -71,7 +49,12 @@ public class WordProcessor {
 			{
 				element.compareTo(element);
 			}
+			BSTBag test = new BSTBag();
+			for(CountedElement<String> element: countedWordSet)
+			{
+				test.add(element);
+			}
+			test.print();
 		}
-		System.out.println(displaySet(countedWordSet));
 	}
 }
