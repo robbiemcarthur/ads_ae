@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -65,6 +66,11 @@ public class WordProcessor2 {
 				count++;
 			}
 			System.out.println(test.size());
+			Iterator testIterator = test.iterator();
+			while(testIterator.hasNext())
+			{
+			System.out.println("Printing from iterator... " + testIterator.next().toString());
+			}
 		}
 	}
 }
