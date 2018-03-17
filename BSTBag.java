@@ -1,6 +1,12 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * 
+ * @author Robbie McArthur - 2098323m
+ *
+ */
+
 public class BSTBag<E extends Comparable<E>> implements Bag<CountedElement<E>> {
 
 	/**
@@ -184,13 +190,12 @@ public class BSTBag<E extends Comparable<E>> implements Bag<CountedElement<E>> {
 	}
 	
 	private class InOrderIterator implements Iterator{
-
 		private Stack<Node<E>> track;
 
 		private InOrderIterator() {
 			track = new LinkedStack<Node<E>>();
-			for (Node<E> index = (Node<E>) root; index != null; index = index.left) {
-				track.push(index);
+			for (Node<E> curr = (Node<E>) root; curr != null; curr = curr.left) {
+				track.push(curr);
 			}
 		}
 
@@ -205,8 +210,8 @@ public class BSTBag<E extends Comparable<E>> implements Bag<CountedElement<E>> {
 				throw new NoSuchElementException();
 			}
 			Node<E> place = (Node<E>) track.pop();
-			for(Node<E> index = place.right; index!= null; index = index.left) {
-				track.push(index);
+			for(Node<E> curr = place.right; curr!= null; curr = curr.left) {
+				track.push(curr);
 			}
 			return (E) ((CountedElement<E>) place.element).getElement(); 
 		}

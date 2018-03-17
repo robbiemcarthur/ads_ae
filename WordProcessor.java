@@ -3,7 +3,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
-
+/**
+ * 
+ * @author Robbie McArthur - 2098323m
+ *
+ */
 
 public class WordProcessor {
 	private static <E> String displaySet(Set<E> inputSet){
@@ -46,7 +50,6 @@ public class WordProcessor {
 					{
 						if(!wordSet.contains(w)||wordSet.isEmpty())
 						{
-//							System.out.println("No instance of " + w + "!");        // TESTING
 							wordSet.add(w);
 							countedWordSet.add(new CountedElement<String>(w, instance));
 						}

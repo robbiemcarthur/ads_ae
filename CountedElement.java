@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author Robbie McArthur - 2098323m
+ *
+ */
 public class CountedElement<E extends Comparable<E>> implements Comparable<CountedElement<E>> {
 	private E element;
 	private int count;
