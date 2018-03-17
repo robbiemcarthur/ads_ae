@@ -7,7 +7,6 @@ import java.util.TreeSet;
 public class WordProcessor2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String [] files = new String[] {"file0.txt", "file1.txt", "file2.txt"};
 		Set<String> wordSet = new TreeSet<String>();
 		Set <CountedElement<String>> countedWordSet = new TreeSet<CountedElement<String>>();
@@ -50,11 +49,22 @@ public class WordProcessor2 {
 				element.compareTo(element);
 			}
 			BSTBag test = new BSTBag();
+			int count = 0;
 			for(CountedElement<String> element: countedWordSet)
 			{
 				test.add(element);
+				System.out.println("Adding "+element+" to " + test);
 			}
-			test.print();
+			for(CountedElement<String> element: countedWordSet)
+			{
+				if (count==1||count==4||count==7)
+				{
+					test.remove(element);
+					System.out.println("Deleting "+element+" from " + test);
+				}
+				count++;
+			}
+			System.out.println(test.size());
 		}
 	}
 }
